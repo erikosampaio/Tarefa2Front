@@ -23,20 +23,20 @@
         <h1><strong>Solicitação de Livros</strong></h1>
         <br>
       </div>
-      <div class="col-md-2">
+      <div style="text-align: right;" class="col-md-3">
         <p></p>
         <div id="timer" class="btn btn-dark">60:00</div>
       </div>
 
       <form>
         <div class="row g-6">
-          <div class="col-md-4">
+          <div class="col-md-5">
             <div class="form-group">
               <label for="vinculo">
                 <h3>Selecione o vínculo</h3>
               </label>
               <select class="form-select" id="vinculo" aria-label="Floating label select example" required>
-                <option selected>Selecione o vínculo</option>
+                <option selected disabled value="">Selecione...</option>
                 <option value="Docente">Docente</option>
                 <option value="Discente">Discente</option>
                 <option value="Técnico">Técnico</option>
@@ -70,7 +70,7 @@
           </div>
 
 
-          <div class="col-md-4">
+          <div class="col-md-5">
             <div class="form-group">
               <label for="titulo">
                 <h3>Título</h3>
@@ -95,10 +95,10 @@
             </div>
           </div>
         </div>
+        <button id="button" type="submit" onclick="formulario()" class="btn btn-dark btn-md">Solicitar
+          Livro</button>
+      </form>
     </div>
-    <button id="button" onclick="formulario()" type="button" class="btn btn-dark btn-md">Solicitar
-      Livro</button>
-    </form>
   </div>
 
   <div class="container">
@@ -113,7 +113,7 @@
 
           <div class="col-2">
             <h5>Vinculo</h5>
-            <h5 onclick="remove()" id="tab_vinculo"></h5>
+            <h5 id="tab_vinculo"></h5>
           </div>
 
           <div class="col-2">

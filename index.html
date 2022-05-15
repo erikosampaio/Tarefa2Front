@@ -95,8 +95,10 @@
             </div>
           </div>
         </div>
-        <button id="button" type="submit" onclick="formulario()" class="btn btn-dark btn-md">Solicitar
+
+        <button type="submit" onclick="formulario.salvar()" class="btn btn-dark btn-md">Solicitar
           Livro</button>
+
       </form>
     </div>
   </div>
@@ -107,48 +109,27 @@
     <h1>Tabela de Solicitação</h1>
     <hr>
     <hr>
+
     <div class="container">
-      <div>
-        <div class="row">
+      <div class="row">
+        <table border="0">
+          <thead>
+            <th>Vinculo</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Edição</th>
+            <th>ISSN</th>
+            <th>Ano</th>
+            <th>Editora</th>
+          </thead>
 
-          <div class="col-2">
-            <h5>Vinculo</h5>
-            <h5 id="tab_vinculo"></h5>
-          </div>
+          <tbody id="tbody">
+          </tbody>
 
-          <div class="col-2">
-            <h5>Título</h5>
-            <p id="tab_titulo"></p>
-          </div>
-
-          <div class="col-2">
-            <h5>Autor</h5>
-            <p id="tab_autor"></p>
-          </div>
-
-          <div class="col-1">
-            <h5>Edição</h5>
-            <p id="tab_edicao"></p>
-          </div>
-
-          <div class="col-2">
-            <h5>ISSN</h5>
-            <p id="tab_issn"></p>
-          </div>
-
-          <div class="col-1">
-            <h5>Ano</h5>
-            <p id="tab_ano"></p>
-          </div>
-
-          <div class="col-2">
-            <h5>Editora</h5>
-            <p id="tab_editora"></p>
-          </div>
-
-        </div>
+        </table>
       </div>
     </div>
+  </div>
   </div>
 
 </body>

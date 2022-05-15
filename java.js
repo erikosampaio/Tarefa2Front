@@ -1,22 +1,59 @@
-// Função para criar tabela
-function formulario() {
-    let vinculo = document.getElementById("vinculo").value;
-    let autor = document.getElementById("autor").value;
-    let issn = document.getElementById("issn").value;
-    let editora = document.getElementById("editora").value;
-    let titulo = document.getElementById("titulo").value;
-    let edicao = document.getElementById("edicao").value;
-    let ano = document.getElementById("ano").value;
+class Formulario {
 
-    var frutas = [vinculo, titulo, autor, edicao, issn, ano, editora];
+    constructor() {
+        this.arraySolicitacao = [];
+    }
 
-    document.getElementById("tab_vinculo").innerHTML = frutas[0];
-    document.getElementById("tab_titulo").innerHTML = frutas[1];
-    document.getElementById("tab_autor").innerHTML = frutas[2];
-    document.getElementById("tab_edicao").innerHTML = frutas[3];
-    document.getElementById("tab_issn").innerHTML = frutas[4];
-    document.getElementById("tab_ano").innerHTML = frutas[5];
-    document.getElementById("tab_editora").innerHTML = frutas[6];
+    salvar() {
+        let formulario = this.lerDados();
+
+        if (this.validaCampos(formulario)) {
+            this.adicionar(formulario);
+        }
+
+        console.log(this.arraySolicitacao);
+    }
+
+    adicionar(formulario) {
+        this.arraySolicitacao.push(formulario);
+    }
+
+    lerDados() {
+        let formulario = {}
+
+        formulario.vinculo = document.getElementById('vinculo').value;
+        formulario.autor = document.getElementById("autor").value;
+        formulario.issn = document.getElementById("issn").value;
+        formulario.editora = document.getElementById("editora").value;
+        formulario.titulo = document.getElementById("titulo").value;
+        formulario.edicao = document.getElementById("edicao").value;
+        formulario.ano = document.getElementById("ano").value;
+
+        return formulario;
+    }
+
+    validaCampos() {
+        let msg = '';
+
+        if (formulario.vinculo == '') {
+            msg += '- Informe o vínculo \n';
+        }
+
+        if (formulario.autor == '') {
+            msg += '- Informe o vínculo \n';
+        }
+
+        if (formulario.titulo == '') {
+            msg += '- Informe o vínculo \n';
+        }
+
+        if (msg != '') {
+            alert(msg);
+            return false;
+        }
+
+        return true;
+    }
 }
 
 //Funções para cronômetro
@@ -54,17 +91,4 @@ window.onload = function () {
     var display = document.querySelector("#timer"); // Elemento para exibir o timer
 
     startTimer(duration, display); //Inicia a função
-}
-
-
-
-//Função para validar campos obrigatórios
-
-// Vinculo, Titulo, Autor
-
-
-
-// Ano
-if (document.querySelector("#ano" < 1900 && "#ano" > 2019)) {
-    let
 }

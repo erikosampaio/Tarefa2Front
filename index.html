@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/bootstrap.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="java.js"></script>  
+  <script src="main.js"></script>
+  <script src="relogio.js"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <title>Formulário</title>
 </head>
@@ -39,7 +40,7 @@
                 <option selected disabled value="">Selecione...</option>
                 <option value="Docente">Docente</option>
                 <option value="Discente">Discente</option>
-                <option value="Técnico">Técnico</option>                
+                <option value="Técnico">Técnico</option>
               </select>
               <br>
             </div>
@@ -48,7 +49,7 @@
               <label for="autor">
                 <h3>Autor</h3>
               </label>
-              <input class="form-control" type="text" id="autor" placeholder="Digite o Autor do livro" required>              
+              <input class="form-control" type="text" id="autor" placeholder="Digite o Autor do livro" required>
               <br>
             </div>
 
@@ -75,7 +76,7 @@
               <label for="titulo">
                 <h3>Título</h3>
               </label>
-              <input class="form-control" type="text" id="titulo" placeholder="Digite o título do livro" required>              
+              <input class="form-control" type="text" id="titulo" placeholder="Digite o título do livro" required>
               <br>
             </div>
 
@@ -91,14 +92,13 @@
               <label for="ano">
                 <h3>Ano</h3>
               </label>
-              <input class="form-control" type="number" id="ano" placeholder="Digite o ano de publicação" min="1900" max="2019">
+              <input class="form-control" type="number" id="ano" placeholder="Digite o ano de publicação">
             </div>
           </div>
         </div>
 
-        <button type="button" ondblclick="salvar()" class="btn btn-dark btn-md">Solicitar
+        <button type="button" onclick="formulario.salvar()" class="btn btn-dark btn-md">Solicitar
           Livro</button>
-
       </form>
     </div>
   </div>
@@ -107,31 +107,26 @@
     <hr>
     <img src="logo/livro.png" alt="Logo livro" height="70px">
     <h1>Tabela de Solicitação</h1>
-    <hr>    
+    <hr>
 
-    <div class="container">      
-      <table class="table">
-        <thead class="table table-dark">
-          <tr>        
-            <th scope="col">Vínculo</th>
-            <th scope="col">Título</th>
-            <th scope="col">Autor</th>
-            <th scope="col">Edição</th>
-            <th scope="col">ISSN</th>
-            <th scope="col">Ano</th>
-            <th scope="col">Editora</th>
-          </tr>
-        </thead>        
-        
-        <tbody id="tboby">
+    <table class="table">
+      <thead class="table table-dark">
+        <th scope="col-">Vínculo</th>
+        <th scope="col">Título</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Edição</th>
+        <th scope="col">ISSN</th>
+        <th scope="col">Ano</th>
+        <th scope="col">Editora</th>
+      </thead>
 
-        </tbody>
+      <tbody id="tboby">
 
-      </table>
-    </div>
+      </tbody>
+
+    </table>
   </div>
   </div>
-
 </body>
 
 </html>

@@ -1,37 +1,3 @@
-function salvar() {
-
-    let vinculo = document.querySelector("#vinculo").value;
-    let autor = document.querySelector("#autor").value;
-    let issn = document.querySelector("#issn").value;
-    let editora = document.querySelector("#editora").value;
-    let titulo = document.querySelector("#titulo").value;
-    let edicao = document.querySelector("#edicao").value;
-    let ano = document.querySelector("#ano").value;
-
-    let tabela = [vinculo, autor, issn, editora, titulo, edicao, ano];
-}
-
-function adicionar() {
-
-    let tboby = document.querySelector('#tboby');
-
-    for(let i = 0; i < tabela.length; i++) {
-        let tr = tboby.insertRow();
-
-        let td_vinculo = tr.insertCell();
-        let td_autor = tr.insertCell();
-        let td_issn = tr.insertCell();
-        let td_editora = tr.insertCell();
-        let td_titulo = tr.insertCell();
-        let td_edicao = tr.insertCell();
-        let td_ano = tr.insertCell();
-    }
-
-    
-}
-
-
-//Funções para cronômetro
 function startTimer(duration, display) {
 
     var timer = duration, minutes, seconds;
@@ -67,4 +33,3 @@ window.onload = function () {
 
     startTimer(duration, display); //Inicia a função
 }
-

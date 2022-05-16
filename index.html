@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/bootstrap.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="java.js"></script>
-  <script src="js/validator.min.js"></script>
+  <script src="java.js"></script>  
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <title>Formulário</title>
 </head>
@@ -29,7 +28,7 @@
         <div id="timer" class="btn btn-dark">60:00</div>
       </div>
 
-      <form data-toggle="validator">
+      <form>
         <div class="row g-6">
           <div class="col-md-5">
             <div class="form-group">
@@ -97,7 +96,7 @@
           </div>
         </div>
 
-        <button type="submit" onclick="salvar()" class="btn btn-dark btn-md">Solicitar
+        <button type="button" ondblclick="salvar()" class="btn btn-dark btn-md">Solicitar
           Livro</button>
 
       </form>
@@ -124,19 +123,9 @@
           </tr>
         </thead>        
         
-        <tbody>
-          <div class="row" id="linhas-tabela">
-            <tr>
-              <th scope="row">Discente</th>
-              <td>Eu</td>
-              <td>Eriko</td>
-              <td>2</td>
-              <td>21345</td>
-              <td>2017</td>
-              <td>Paulus</td>
-            </tr>
-            </div>
-          </tbody>
+        <tbody id="tboby">
+
+        </tbody>
 
       </table>
     </div>

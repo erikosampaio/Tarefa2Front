@@ -1,6 +1,7 @@
 class Formulario {
 
     constructor() {
+        this.id = 1;
         this.arrayFormularios = [];
     }
 
@@ -15,11 +16,11 @@ class Formulario {
     }
 
     listaTabela() {
-        let tboby = document.querySelector('#tboby');
-        tboby.innerText = '';
+        let tbody = document.querySelector('#tbody');
+        tbody.innerText = '';
 
         for (let i = 0; i < this.arrayFormularios.length; i++) {
-            let tr = tboby.insertRow();
+            let tr = tbody.insertRow();
 
             let td_vinculo = tr.insertCell();
             let td_titulo = tr.insertCell();
@@ -40,12 +41,16 @@ class Formulario {
             td_edicao.classList.add('center');
             td_issn.classList.add('center');
             td_ano.classList.add('center');
-            
+
+            tr.setAttribute('ondblclick', "formulario.deletar(" + this.arrayFormularios[i].id + ")");
+
+            this.limpaCampos();
         }
     }
 
     adicionar(formulario) {
         this.arrayFormularios.push(formulario);
+        this.id++;
     }
 
     validaCampos(formulario) {
@@ -56,20 +61,20 @@ class Formulario {
 
         if (ano != '') {
             if (ano < 1900 || ano > 2019) {
-                msg += '- Ano inválido!\n';
+                msg += '- Ano válido: 1900 a 2019.\n\n';
             }
         }
 
         if (formulario.vinculo == '') {
-            msg += '- Informe um vínculo!\n';
+            msg += '- Vínculo obrigatório!\n\n';
         }
 
         if (formulario.autor == '') {
-            msg += '- Informe o nome do autor!\n';
+            msg += '- Autor obrigatório!\n\n';
         }
 
         if (formulario.titulo == '') {
-            msg += '- Informe o título!\n';
+            msg += '- Título obrigatório!\n';
         }
 
         if (msg != '') {
@@ -84,6 +89,7 @@ class Formulario {
     lerDados() {
         let formulario = {}
 
+        formulario.id = this.id;
         formulario.vinculo = document.querySelector('#vinculo').value;
         formulario.autor = document.querySelector('#autor').value;
         formulario.issn = document.querySelector('#issn').value;
@@ -95,8 +101,30 @@ class Formulario {
         return formulario
     }
 
-    excluir() {
-        alert('Item deletado')
+    limpaCampos() {
+
+        document.querySelector('#vinculo').value = '';
+        document.querySelector('#autor').value = '';
+        document.querySelector('#issn').value = '';
+        document.querySelector('#editora').value = '';
+        document.querySelector('#titulo').value = '';
+        document.querySelector('#edicao').value = '';
+        document.querySelector('#ano').value = '';
+    }
+
+    deletar(id) {
+
+        if(startTimer) {
+            return alert('impossível deletar solitações já feitas!')
+        }        
+        let tbody = document.querySelector('#tbody');
+
+        for (let i = 0; i < this.arrayFormularios.length; i++) {
+            if (id == this.arrayFormularios[i].id) {
+                this.arrayFormularios.splice(i, 1);
+                tbody.deleteRow(i);
+            }
+        }
     }
 }
 

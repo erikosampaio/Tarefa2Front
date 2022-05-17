@@ -21,6 +21,7 @@ function startTimer(duration, display) {
             document.querySelector("#titulo").disabled = true
             document.querySelector("#edicao").disabled = true
             document.querySelector("#ano").disabled = true
+            return true;
         }
 
     }, 1000);

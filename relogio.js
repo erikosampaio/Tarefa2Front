@@ -13,15 +13,17 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            timer = 0
-            document.querySelector("#vinculo").disabled = true
-            document.querySelector("#autor").disabled = true
-            document.querySelector("#issn").disabled = true
-            document.querySelector("#editora").disabled = true
-            document.querySelector("#titulo").disabled = true
-            document.querySelector("#edicao").disabled = true
-            document.querySelector("#ano").disabled = true
-            return true;
+            timer = 0;
+            document.querySelector("#vinculo").disabled = true;
+            document.querySelector("#autor").disabled = true;
+            document.querySelector("#issn").disabled = true;
+            document.querySelector("#editora").disabled = true;
+            document.querySelector("#titulo").disabled = true;
+            document.querySelector("#edicao").disabled = true;
+            document.querySelector("#ano").disabled = true;
+            document.querySelector("#button").disabled = true;
+            display.textContent = 'Timeout';
+            console.log('ok');
         }
 
     }, 1000);

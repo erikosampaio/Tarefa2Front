@@ -114,9 +114,6 @@ class Formulario {
 
     deletar(id) {
 
-        if(startTimer) {
-            return alert('impossível deletar solitações já feitas!')
-        }        
         let tbody = document.querySelector('#tbody');
 
         for (let i = 0; i < this.arrayFormularios.length; i++) {

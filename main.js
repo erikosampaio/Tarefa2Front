@@ -10,47 +10,25 @@ class Formulario {
 
         if (this.validaCampos(formulario)) {
             this.adicionar(formulario);
+            this.limpaCampos();
         }
 
         this.listaTabela();
     }
 
-    listaTabela() {
-        let tbody = document.querySelector('#tbody');
-        tbody.innerText = '';
+    lerDados() {
+        let formulario = {}
 
-        for (let i = 0; i < this.arrayFormularios.length; i++) {
-            let tr = tbody.insertRow();
+        formulario.id = this.id;
+        formulario.vinculo = document.querySelector('#vinculo').value;
+        formulario.autor = document.querySelector('#autor').value;
+        formulario.issn = document.querySelector('#issn').value;
+        formulario.editora = document.querySelector('#editora').value;
+        formulario.titulo = document.querySelector('#titulo').value;
+        formulario.edicao = document.querySelector('#edicao').value;
+        formulario.ano = document.querySelector('#ano').value;
 
-            let td_vinculo = tr.insertCell();
-            let td_titulo = tr.insertCell();
-            let td_autor = tr.insertCell();
-            let td_edicao = tr.insertCell();
-            let td_issn = tr.insertCell();
-            let td_ano = tr.insertCell();
-            let td_editora = tr.insertCell();
-
-            td_vinculo.innerText = this.arrayFormularios[i].vinculo;
-            td_autor.innerText = this.arrayFormularios[i].autor;
-            td_issn.innerText = this.arrayFormularios[i].issn;
-            td_editora.innerText = this.arrayFormularios[i].editora;
-            td_titulo.innerText = this.arrayFormularios[i].titulo;
-            td_edicao.innerText = this.arrayFormularios[i].edicao;
-            td_ano.innerText = this.arrayFormularios[i].ano;
-
-            td_edicao.classList.add('center');
-            td_issn.classList.add('center');
-            td_ano.classList.add('center');
-
-            tr.setAttribute('ondblclick', "formulario.deletar(" + this.arrayFormularios[i].id + ")");
-
-            this.limpaCampos();
-        }
-    }
-
-    adicionar(formulario) {
-        this.arrayFormularios.push(formulario);
-        this.id++;
+        return formulario
     }
 
     validaCampos(formulario) {
@@ -83,22 +61,42 @@ class Formulario {
         }
 
         return true;
-
     }
 
-    lerDados() {
-        let formulario = {}
+    adicionar(formulario) {
+        this.arrayFormularios.push(formulario);
+        this.id++;
+    }
 
-        formulario.id = this.id;
-        formulario.vinculo = document.querySelector('#vinculo').value;
-        formulario.autor = document.querySelector('#autor').value;
-        formulario.issn = document.querySelector('#issn').value;
-        formulario.editora = document.querySelector('#editora').value;
-        formulario.titulo = document.querySelector('#titulo').value;
-        formulario.edicao = document.querySelector('#edicao').value;
-        formulario.ano = document.querySelector('#ano').value;
+    listaTabela() {
+        let tbody = document.querySelector('#tbody');
+        tbody.innerText = '';
 
-        return formulario
+        for (let i = 0; i < this.arrayFormularios.length; i++) {
+            let tr = tbody.insertRow();
+
+            let td_vinculo = tr.insertCell();
+            let td_titulo = tr.insertCell();
+            let td_autor = tr.insertCell();
+            let td_edicao = tr.insertCell();
+            let td_issn = tr.insertCell();
+            let td_ano = tr.insertCell();
+            let td_editora = tr.insertCell();
+
+            td_vinculo.innerText = this.arrayFormularios[i].vinculo;
+            td_autor.innerText = this.arrayFormularios[i].autor;
+            td_issn.innerText = this.arrayFormularios[i].issn;
+            td_editora.innerText = this.arrayFormularios[i].editora;
+            td_titulo.innerText = this.arrayFormularios[i].titulo;
+            td_edicao.innerText = this.arrayFormularios[i].edicao;
+            td_ano.innerText = this.arrayFormularios[i].ano;
+
+            td_edicao.classList.add('center');
+            td_issn.classList.add('center');
+            td_ano.classList.add('center');
+
+            tr.setAttribute('ondblclick', "formulario.deletar(" + this.arrayFormularios[i].id + ")");
+        }
     }
 
     limpaCampos() {
@@ -124,6 +122,5 @@ class Formulario {
         }
     }
 }
-
 
 var formulario = new Formulario();
